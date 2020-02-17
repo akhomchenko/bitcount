@@ -1,0 +1,9 @@
+.packages
+.dart_tool
+pubspec.lock
+
+build/
+
+# editors
+
+.idea/
