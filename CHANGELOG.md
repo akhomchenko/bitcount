@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2] - 2020-02-21
+
+### Fixed
+
+* switched visibility for implementation detail so it is
+no longer exposed as public.
+
 ## [0.1.1] - 2020-02-21
 
 ### Changed
