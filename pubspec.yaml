@@ -1,11 +1,11 @@
 name: bitcount
 version: 0.1.0
 description: >-
-  Efficient bit count.
+  Provides efficient one-bits count method extension for default int.
 homepage: https://github.com/gagoman/bitcount
 
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.6.0 <3.0.0'
 
 dev_dependencies:
   test: ^1.0.0
