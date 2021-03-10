@@ -32,5 +32,5 @@ void main() {
 }
 
 int _shiftLeft(int n, int shift) {
-  return n * pow(2, shift);
+  return n * pow(2, shift).toInt();
 }

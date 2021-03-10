@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.3] - 2020-03-10
+
+### Fixed
+
+* Now supports null safety
+
 ## [0.1.2] - 2020-02-21
 
 ### Fixed
