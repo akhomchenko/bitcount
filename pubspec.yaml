@@ -1,5 +1,5 @@
 name: bitcount
-version: 0.1.2
+version: 0.1.3
 description: >-
   Provides efficient one-bits count method extension for default int.
 homepage: https://github.com/akhomchenko/bitcount
