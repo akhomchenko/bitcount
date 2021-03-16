@@ -11,6 +11,10 @@
 * minimal supported SDK version was always 2.7 as extensions
   were released in 2.7.
 
+### Changed
+
+* homepage URL due to Github login change.
+
 ## [0.1.2] - 2020-02-21
 
 ### Fixed

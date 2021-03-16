@@ -2,7 +2,7 @@ name: bitcount
 version: 0.1.2
 description: >-
   Provides efficient one-bits count method extension for default int.
-homepage: https://github.com/gagoman/bitcount
+homepage: https://github.com/akhomchenko/bitcount
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
