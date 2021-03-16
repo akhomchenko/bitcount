@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+* Github action to have automated tests / analyze
+
 ## [0.1.2] - 2020-02-21
 
 ### Fixed
