@@ -5,7 +5,7 @@ description: >-
 homepage: https://github.com/gagoman/bitcount
 
 environment:
-  sdk: '>=2.6.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 
 dev_dependencies:
   test: ^1.0.0
