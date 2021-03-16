@@ -14,6 +14,6 @@ class BitCountBenchmark extends BenchmarkBase {
   }
 }
 
-main() {
+void main() {
   BitCountBenchmark.main();
 }
