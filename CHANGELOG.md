@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+* null safety.
+
+### Changed
+
+* minimal supported SDK version is 2.12 (due to null safety).
+
 ## [0.1.3] - 2021-03-16
 
 ### Added
