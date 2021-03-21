@@ -5,6 +5,7 @@
 ### Added
 
 * null safety.
+* tests will be executed each Monday against stable SDK.
 
 ### Changed
 
