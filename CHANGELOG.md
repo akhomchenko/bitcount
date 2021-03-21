@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+* null safety.
+
+### Changed
+
+* minimal supported SDK version is 2.12 (due to null safety).
+
+### Removed
+
+* Github actions support for SDK versions < 2.10.
+
 ## [0.1.3] - 2021-03-16
 
 ### Added

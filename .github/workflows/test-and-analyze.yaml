@@ -9,10 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         sdk:
-          - 2.7.0  # min
+          - 2.12.0 # min
           - stable # max
-
-    # TODO(akhomchenko): drop if conditions when min version is updated to 2.10
 
     steps:
       - uses: actions/checkout@v2
@@ -21,58 +19,14 @@ jobs:
           sdk: ${{ matrix.sdk }}
       - uses: actions/setup-node@v2
 
-      - name: Install dependencies (<2.10)
-        run: pub get
-        if: >-
-          startsWith(matrix.sdk, '2.7.') ||
-          startsWith(matrix.sdk, '2.8.') ||
-          startsWith(matrix.sdk, '2.9.')
-
-      - name: Install dependencies (>=2.10)
+      - name: Install dependencies
         run: dart pub get
-        if: >-
-          !startsWith(matrix.sdk, '2.7.') &&
-          !startsWith(matrix.sdk, '2.8.') &&
-          !startsWith(matrix.sdk, '2.9.')
 
-      - name: Verify formatting (<2.10)
-        run: dartfmt --overwrite --set-exit-if-changed .
-        if: >-
-          startsWith(matrix.sdk, '2.7.') ||
-          startsWith(matrix.sdk, '2.8.') ||
-          startsWith(matrix.sdk, '2.9.')
-
-      - name: Verify formatting (>=2.10)
+      - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
-        if: >-
-          !startsWith(matrix.sdk, '2.7.') &&
-          !startsWith(matrix.sdk, '2.8.') &&
-          !startsWith(matrix.sdk, '2.9.')
 
-      - name: Analyze project source (<2.10)
-        run: dartanalyzer .
-        if: >-
-          startsWith(matrix.sdk, '2.7.') ||
-          startsWith(matrix.sdk, '2.8.') ||
-          startsWith(matrix.sdk, '2.9.')
-
-      - name: Analyze project source (>=2.10)
+      - name: Analyze project source
         run: dart analyze
-        if: >-
-          !startsWith(matrix.sdk, '2.7.') &&
-          !startsWith(matrix.sdk, '2.8.') &&
-          !startsWith(matrix.sdk, '2.9.')
 
-      - name: Run tests (<2.10)
-        run: pub run test
-        if: >-
-          startsWith(matrix.sdk, '2.7.') ||
-          startsWith(matrix.sdk, '2.8.') ||
-          startsWith(matrix.sdk, '2.9.')
-
-      - name: Run tests (>=2.10)
+      - name: Run tests
         run: dart test
-        if: >-
-          !startsWith(matrix.sdk, '2.7.') &&
-          !startsWith(matrix.sdk, '2.8.') &&
-          !startsWith(matrix.sdk, '2.9.')
