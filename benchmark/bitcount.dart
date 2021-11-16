@@ -9,6 +9,13 @@ class BitCountBenchmark extends BenchmarkBase {
   }
 
   @override
+  void exercise() {
+    for (var i = 0; i < 100000; i++) {
+      run();
+    }
+  }
+
+  @override
   void run() {
     ((1 << 42) - 1).bitCount();
   }
