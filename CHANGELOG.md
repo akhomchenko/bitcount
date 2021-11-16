@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+* instructions on how to run benchmark.
+
+### Changed
+
+* increased number of iterations in benchmark. Helps to see the difference
+  in this library case.
+
 ## [0.2.0] - 2021-03-20
 
 ### Added
