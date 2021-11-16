@@ -4,10 +4,6 @@ import 'package:bitcount/bitcount.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('physics (the day this fails our JS numbers detection is broken)', () {
-    expect(1 << 32, anyOf(0, 1));
-  }, testOn: 'js');
-
   group('.bitCount()', () {
     void checkBitCount(int number, int expectedCount) {
       test('$expectedCount for $number', () {

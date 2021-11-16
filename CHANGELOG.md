@@ -8,6 +8,9 @@
 
 ### Changed
 
+* bitcount on native is no longer 2 32 bit counts but a single 64 bit one.
+* code no longer detects if it is running on JS but using dart2js hack but
+  relies on conditional imports and `dart.library.js` availability.
 * increased number of iterations in benchmark. Helps to see the difference
   in this library case.
 
