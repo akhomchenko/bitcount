@@ -1,6 +1,6 @@
 # Dart 3 Modernization
 
-Status: proposed
+Status: in_progress
 
 ## Goal
 
@@ -8,10 +8,10 @@ Modernize the package to Dart 3 standards and make CI execute correctly.
 
 ## Exit Criteria
 
-- The package resolves, analyzes, and passes tests with `environment.sdk: ^3.0.0`.
-- CI passes on Dart `3.0.0` and on the current stable Dart SDK.
+- The package resolves, analyzes, and passes tests with `environment.sdk: ^3.7.0`.
+- CI passes on Dart `3.7.0` and on the current stable Dart SDK.
 - CI explicitly exercises both the VM and Node test platforms.
-- Stable CI also verifies downgraded dependency resolution and test execution.
+- CI also verifies downgraded dependency resolution and test execution.
 
 ## Context
 
@@ -21,14 +21,19 @@ CI while preserving the public API and the VM/JS implementation split.
 
 ## Tasks
 
-- [ ] Update package metadata for Dart 3 support and refresh dev dependencies.
-- [ ] Replace `pedantic` with `lints` and address any compatibility changes.
+- [x] Update package metadata for Dart 3 support and refresh dev dependencies.
+- [x] Replace `pedantic` with `lints` and address any compatibility changes.
 - [ ] Modernize the GitHub Actions workflow for current actions and CI coverage.
-- [ ] Validate latest and downgraded dependency flows on stable Dart.
-- [ ] Validate formatting, analysis, tests, and example execution on Dart `3.0.0`
-      and stable.
+- [ ] Validate latest and downgraded dependency flows on Dart `3.7.0` and
+      stable.
+- [ ] Validate formatting, analysis, tests, and example execution on Dart
+      `3.7.0` and stable.
 
 ## Notes / Findings
 
-- Planned SDK floor is `^3.0.0` rather than latest-stable-only.
-- Dependency selections must remain compatible with Dart `3.0.0`.
+- Final SDK floor is `^3.7.0`; lower floors did not validate cleanly with the
+  current test toolchain under downgraded VM resolution.
+- Reliable downgraded validation requires `test: ^1.31.0` together with the
+  explicit `frontend_server_client: ^4.0.0` floor.
+- The `lints` migration required only small naming cleanups, and the package
+  metadata now includes a `repository` field alongside the existing homepage.
