@@ -1,4 +1,4 @@
-const _30Bits = (1 << 30);
+const thirtyBits = (1 << 30);
 
 // Described in Hacker's Delight (Figure 5-2).
 int _bitCount32(int n) {
@@ -11,7 +11,7 @@ int _bitCount32(int n) {
 }
 
 int bitCount(int n) {
-  var lo30Bits = n & (_30Bits - 1);
-  var hi22Bits = (n - lo30Bits) ~/ _30Bits;
+  var lo30Bits = n & (thirtyBits - 1);
+  var hi22Bits = (n - lo30Bits) ~/ thirtyBits;
   return _bitCount32(lo30Bits) + _bitCount32(hi22Bits);
 }

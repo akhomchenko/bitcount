@@ -2,8 +2,12 @@ name: Test and Analyze
 
 on:
   push:
+  pull_request:
   schedule:
     - cron: '0 0 * * MON'
+
+permissions:
+  contents: read
 
 jobs:
   test-and-analyze:
@@ -12,15 +16,17 @@ jobs:
       fail-fast: false
       matrix:
         sdk:
-          - 2.12.0 # min
+          - 3.7.0 # min
           - stable # max
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - uses: dart-lang/setup-dart@v1
         with:
           sdk: ${{ matrix.sdk }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
 
       - name: Install dependencies
         run: dart pub get
@@ -32,4 +38,16 @@ jobs:
         run: dart analyze
 
       - name: Run tests
-        run: dart test
+        run: dart test -p vm,node
+
+      - name: Run example
+        run: dart run example/example.dart
+
+      - name: Downgrade dependencies
+        run: dart pub downgrade
+
+      - name: Analyze downgraded dependency resolution
+        run: dart analyze
+
+      - name: Run downgraded tests
+        run: dart test -p vm,node
