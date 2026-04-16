@@ -1,6 +1,6 @@
 # Dart 3 Modernization
 
-Status: in_progress
+Status: done
 
 ## Goal
 
@@ -23,10 +23,10 @@ CI while preserving the public API and the VM/JS implementation split.
 
 - [x] Update package metadata for Dart 3 support and refresh dev dependencies.
 - [x] Replace `pedantic` with `lints` and address any compatibility changes.
-- [ ] Modernize the GitHub Actions workflow for current actions and CI coverage.
-- [ ] Validate latest and downgraded dependency flows on Dart `3.7.0` and
+- [x] Modernize the GitHub Actions workflow for current actions and CI coverage.
+- [x] Validate latest and downgraded dependency flows on Dart `3.7.0` and
       stable.
-- [ ] Validate formatting, analysis, tests, and example execution on Dart
+- [x] Validate formatting, analysis, tests, and example execution on Dart
       `3.7.0` and stable.
 
 ## Notes / Findings
@@ -35,5 +35,9 @@ CI while preserving the public API and the VM/JS implementation split.
   current test toolchain under downgraded VM resolution.
 - Reliable downgraded validation requires `test: ^1.31.0` together with the
   explicit `frontend_server_client: ^4.0.0` floor.
+- Explicit direct anchors for `file`, `pub_semver`, and `watcher` are not
+  required; downgraded analysis and tests remain green without them.
+- CI now runs on `push`, `pull_request`, and the weekly schedule, validates
+  Dart `3.7.0` and `stable`, and exercises `dart test -p vm,node`.
 - The `lints` migration required only small naming cleanups, and the package
   metadata now includes a `repository` field alongside the existing homepage.
