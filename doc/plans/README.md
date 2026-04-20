@@ -2,7 +2,7 @@
 
 This repository tracks work in a single live document per feature:
 
-`docs/plans/<feature>/PLAN.md`
+`doc/plans/<feature>/PLAN.md`
 
 That `PLAN.md` is both the design record and the execution board. Supporting files are allowed, but this is the only live execution tracker for the work.
 
@@ -10,12 +10,12 @@ That `PLAN.md` is both the design record and the execution board. Supporting fil
 
 Use a stable human-readable slug for `<feature>` by default:
 
-- `docs/plans/js-bitcount-alignment/PLAN.md`
-- `docs/plans/benchmark-refresh/PLAN.md`
+- `doc/plans/js-bitcount-alignment/PLAN.md`
+- `doc/plans/benchmark-refresh/PLAN.md`
 
 If the human explicitly mentions a ticket or wants ticket-based naming, include it in the directory name:
 
-- `docs/plans/123-js-bitcount-alignment/PLAN.md`
+- `doc/plans/123-js-bitcount-alignment/PLAN.md`
 
 ## Plan Ownership
 
@@ -67,4 +67,4 @@ Add extra files next to a feature `PLAN.md` only when the work actually needs th
 - `notes.md`
 - `decisions.md`
 
-Those files support the feature plan, but `docs/plans/<feature>/PLAN.md` remains the only live tracking document.
+Those files support the feature plan, but `doc/plans/<feature>/PLAN.md` remains the only live tracking document.

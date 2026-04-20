@@ -2,13 +2,11 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-04-19
+
 ### Changed
 
-* modernized the package for Dart 3 with `sdk: ^3.7.0`.
-* replaced `pedantic` with `lints`.
-* refreshed dev dependency constraints for current Dart 3-compatible releases.
-* updated CI to run on pull requests, validate Dart `3.7.0` and stable, and
-  exercise both VM and Node test platforms including downgraded dependencies.
+* raised the minimum supported Dart SDK to `^3.7.0`.
 
 ## [0.3.0] - 2021-11-16
 
